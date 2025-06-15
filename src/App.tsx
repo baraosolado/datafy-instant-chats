@@ -85,83 +85,93 @@ const App = () => (
               } 
             />
 
-            {/* Protected Routes */}
+            {/* Index Route */}
             <Route path="/" element={<Index />} />
+
+            {/* Protected Routes with Layout */}
             <Route 
               path="/dashboard" 
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Dashboard />
-                  </Layout>
+                  <Layout />
                 </ProtectedRoute>
-              } 
-            />
+              }
+            >
+              <Route index element={<Dashboard />} />
+            </Route>
+
+            <Route 
+              path="/subscription" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Subscription />} />
+            </Route>
+
+            <Route 
+              path="/api" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<API />} />
+            </Route>
+
+            <Route 
+              path="/profile" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Profile />} />
+            </Route>
+
+            <Route 
+              path="/settings" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Settings />} />
+            </Route>
+
+            <Route 
+              path="/calendar" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Calendar />} />
+            </Route>
+
+            <Route 
+              path="/contacts" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Contacts />} />
+            </Route>
+
+            {/* Instance route without layout */}
             <Route 
               path="/instance/:id" 
               element={
                 <ProtectedRoute>
                   <Instance />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/subscription" 
-              element={
-                <ProtectedRoute>
-                  <Layout>
-                    <Subscription />
-                  </Layout>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/api" 
-              element={
-                <ProtectedRoute>
-                  <Layout>
-                    <API />
-                  </Layout>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/profile" 
-              element={
-                <ProtectedRoute>
-                  <Layout>
-                    <Profile />
-                  </Layout>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/settings" 
-              element={
-                <ProtectedRoute>
-                  <Layout>
-                    <Settings />
-                  </Layout>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/calendar" 
-              element={
-                <ProtectedRoute>
-                  <Layout>
-                    <Calendar />
-                  </Layout>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/contacts" 
-              element={
-                <ProtectedRoute>
-                  <Layout>
-                    <Contacts />
-                  </Layout>
                 </ProtectedRoute>
               } 
             />
